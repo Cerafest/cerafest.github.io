@@ -1,146 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Je t'aime Noémie</title>
-    <style>
-        body {
-            background-color: pink;
-            font-family: "Comic Sans MS", cursive, sans-serif;
-            text-align: center;
-            color: hotpink;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        h1 {
-            font-size: 50px;
-            text-shadow: 3px 3px yellow;
-            animation: rainbow 3s infinite alternate;
-            margin-top: 20px;
-        }
-        @keyframes rainbow {
-            0% { color: hotpink; }
-            33% { color: red; }
-            66% { color: magenta; }
-            100% { color: purple; }
-        }
-        .hearts {
-            margin: 20px auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .hearts img {
-            width: 60px;
-            height: 60px;
-            animation: spin 3s infinite linear;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .background-gifs {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .background-gifs img {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            animation: float 10s infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-30px); }
-            100% { transform: translateY(0); }
-        }
-        .background-gifs img:nth-child(odd) {
-            animation-delay: 2s;
-        }
-        p {
-            font-size: 20px;
-            color: magenta;
-            text-shadow: 2px 2px white;
-            font-weight: bold;
-            padding: 10px;
-        }
-        #music-control {
-            margin: 20px;
-        }
-        button {
-            font-size: 16px;
-            color: white;
-            background-color: hotpink;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            box-shadow: 2px 2px 5px gray;
-        }
-        button:hover {
-            background-color: red;
-        }
-        @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 30px;
-            }
-            .hearts img {
-                width: 40px;
-                height: 40px;
-            }
-            p {
-                font-size: 16px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pour toi, Noémie ❤️</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(135deg, pink, red);
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 5px hotpink;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px 10px;
+    }
+
+    .hearts {
+      margin-top: 20px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    button {
+      background: hotpink;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 2px 2px 5px #d3007d;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff69b4;
+    }
+
+    .song {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    img {
+      width: 70%;
+      max-width: 300px;
+      margin: 20px 0;
+      border: 5px solid white;
+      border-radius: 20px;
+      box-shadow: 0 0 10px hotpink;
+    }
+
+    .gif {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 1em;
+    }
+  </style>
 </head>
 <body>
-    <!-- Gifs animés en arrière-plan -->
-    <div class="background-gifs">
-        <img src="https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/j8R6SPRuIxqW62uQiI/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/xUOxf0s4lxH1oBunOw/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/1BcfiGlOGXzQwaMlYb/giphy.gif" alt="Heart">
-    </div>
+  <audio class="song" autoplay loop>
+    <source src="votre_chanson.mp3" type="audio/mp3">
+    Votre navigateur ne supporte pas l'audio.
+  </audio>
 
-    <h1>💖 JE T'AIME NOÉMIE 💖</h1>
+  <div class="container">
+    <h1>Pour toi, Noémie ❤️</h1>
+    <img src="https://i.giphy.com/media/26uflVAp3Ai6zD1tO/giphy.gif" alt="Cœur battant" class="gif">
+    <p>Mon cœur bat pour toi chaque seconde, chaque minute, chaque instant. 💕</p>
+    <p>Je voulais que tu saches à quel point tu illumines ma vie et combien je t’aime. ❤️</p>
+    <img src="https://i.giphy.com/media/l41lH8EfgzUuoJ39W/giphy.gif" alt="Roses romantiques" class="hearts">
+    <p>Tu es mon rayon de soleil, mon étoile, et ma plus belle histoire. 🌹✨</p>
+    <button onclick="alert('Je t’aime, Noémie ❤️')">Clique ici si toi aussi tu m’aimes</button>
+  </div>
 
-    <div class="hearts">
-        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/1BcfiGlOGXzQwaMlYb/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/j8R6SPRuIxqW62uQiI/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/xUOxf0s4lxH1oBunOw/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/1BcfiGlOGXzQwaMlYb/giphy.gif" alt="Heart">
-    </div>
-
-    <p>🌟 Tu es mon étoile, ma lumière, mon tout 🌟</p>
-    <p>🌸 Noémie, tu rends ma vie magique et belle 🌸</p>
-
-    <!-- Musique kitsch -->
-    <div id="music-control">
-        <audio id="love-music" loop autoplay>
-            <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
-            Votre navigateur ne supporte pas la musique.
-        </audio>
-        <button onclick="document.getElementById('love-music').play()">🎵 Rejouer 🎵</button>
-        <button onclick="document.getElementById('love-music').pause()">⏸ Pause ⏸</button>
-    </div>
-
-    <!-- Encore plus d'images de cœurs -->
-    <div class="hearts">
-        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/j8R6SPRuIxqW62uQiI/giphy.gif" alt="Heart">
-        <img src="https://media.giphy.com/media/1BcfiGlOGXzQwaMlYb/giphy.gif" alt="Heart">
-    </div>
+  <footer>Créé avec tout l’amour du monde pour toi 💖</footer>
 </body>
 </html>
+
