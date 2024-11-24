@@ -20,11 +20,23 @@
         h1 {
             font-size: 5em;
             text-shadow: 2px 2px yellow;
-            margin-top: 20%;
+            margin-top: 5%;
         }
         .hearts {
             font-size: 3em;
             animation: float 3s infinite alternate;
+        }
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .gif-container img {
+            width: 150px;
+            height: auto;
+            animation: bounce 2s infinite alternate;
         }
         @keyframes float {
             from {
@@ -32,6 +44,14 @@
             }
             to {
                 transform: translateY(-20px);
+            }
+        }
+        @keyframes bounce {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
             }
         }
     </style>
@@ -43,6 +63,13 @@
     </audio>
     <h1>💖 Je t'aime Noémie 💖</h1>
     <div class="hearts">💞💓💘💕💗💝</div>
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/l0HlI1Z2X3fsD10zS/giphy.gif" alt="Cœur animé 1">
+        <img src="https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif" alt="Cœur animé 2">
+        <img src="https://media.giphy.com/media/3oEjHGrVGrqgFFknfO/giphy.gif" alt="Cœur animé 3">
+        <img src="https://media.giphy.com/media/1wXnkj4GsJq7Pf7UM1/giphy.gif" alt="Cœur animé 4">
+    </div>
 </body>
 </html>
+
 
