@@ -102,10 +102,15 @@
         <img src="giphy3.webp" alt="Cœur animé 3">
         <img src="giphy4.webp" alt="Cœur animé 4">
     </div>
-    <button onclick="launchConfetti()">clique si tu maime aussi</button>
+    <button onclick="launchEffects()">Clique si tu m'aimes aussi</button>
     <canvas id="confettiCanvas" class="confetti"></canvas>
 
     <script>
+        function launchEffects() {
+            launchConfetti();
+            makeGifsSpin();
+        }
+
         function launchConfetti() {
             const confetti = document.getElementById('confettiCanvas');
             const confettiCtx = confetti.getContext('2d');
@@ -145,6 +150,12 @@
             }
 
             drawParticles();
+        }
+
+        function makeGifsSpin() {
+            const gifs = document.querySelectorAll('.gif-container img');
+            gifs.forEach(gif => gif.classList.add('loop'));
+            setTimeout(() => gifs.forEach(gif => gif.classList.remove('loop')), 5000); // Les loopings durent 5 secondes
         }
     </script>
 </body>
