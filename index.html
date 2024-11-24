@@ -1,102 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pour toi, Noémie ❤️</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(135deg, pink, red);
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 3em;
-      text-shadow: 2px 2px 5px hotpink;
-    }
-
-    p {
-      font-size: 1.5em;
-      margin: 20px 10px;
-    }
-
-    .hearts {
-      margin-top: 20px;
-      animation: float 3s infinite ease-in-out;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    button {
-      background: hotpink;
-      color: white;
-      font-size: 1.2em;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 20px;
-      box-shadow: 2px 2px 5px #d3007d;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #ff69b4;
-    }
-
-    .song {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-
-    img {
-      width: 70%;
-      max-width: 300px;
-      margin: 20px 0;
-      border: 5px solid white;
-      border-radius: 20px;
-      box-shadow: 0 0 10px hotpink;
-    }
-
-    .gif {
-      width: 100%;
-      max-width: 400px;
-    }
-
-    footer {
-      margin-top: 20px;
-      font-size: 1em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déclaration d'Amour à Noémie</title>
+    <style>
+        body {
+            background-color: pink;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Heart_balloons.svg/1024px-Heart_balloons.svg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+            color: red;
+            font-family: "Comic Sans MS", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 5em;
+            text-shadow: 2px 2px yellow;
+            margin-top: 20%;
+        }
+        .hearts {
+            font-size: 3em;
+            animation: float 3s infinite alternate;
+        }
+        @keyframes float {
+            from {
+                transform: translateY(0px);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
 </head>
 <body>
-  <audio class="song" autoplay loop>
-    <source src="votre_chanson.mp3" type="audio/mp3">
-    Votre navigateur ne supporte pas l'audio.
-  </audio>
-
-  <div class="container">
-    <h1>Pour toi, Noémie ❤️</h1>
-    <img src="https://i.giphy.com/media/26uflVAp3Ai6zD1tO/giphy.gif" alt="Cœur battant" class="gif">
-    <p>Mon cœur bat pour toi chaque seconde, chaque minute, chaque instant. 💕</p>
-    <p>Je voulais que tu saches à quel point tu illumines ma vie et combien je t’aime. ❤️</p>
-    <img src="https://i.giphy.com/media/l41lH8EfgzUuoJ39W/giphy.gif" alt="Roses romantiques" class="hearts">
-    <p>Tu es mon rayon de soleil, mon étoile, et ma plus belle histoire. 🌹✨</p>
-    <button onclick="alert('Je t’aime, Noémie ❤️')">Clique ici si toi aussi tu m’aimes</button>
-  </div>
-
-  <footer>Créé avec tout l’amour du monde pour toi 💖</footer>
+    <audio autoplay loop>
+        <source src="votre-musique.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'audio HTML5.
+    </audio>
+    <h1>💖 Je t'aime Noémie 💖</h1>
+    <div class="hearts">💞💓💘💕💗💝</div>
 </body>
 </html>
 
