@@ -38,6 +38,22 @@
             height: auto;
             animation: bounce 2s infinite alternate;
         }
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: yellow;
+            border: 2px solid red;
+            border-radius: 10px;
+            color: red;
+            font-family: "Comic Sans MS", sans-serif;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        button:hover {
+            background-color: red;
+            color: yellow;
+        }
         @keyframes float {
             from {
                 transform: translateY(0px);
@@ -54,11 +70,28 @@
                 transform: scale(1.2);
             }
         }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
     <audio autoplay loop>
-        <source src="The Platters - Only You, And You Alone (1955) 4K.mp33" type="mp3">
+        <source src="votre-musique.mp3" type="audio/mpeg">
         Votre navigateur ne supporte pas l'audio HTML5.
     </audio>
     <h1>💖 Je t'aime Noémie 💖</h1>
@@ -69,7 +102,53 @@
         <img src="https://media.giphy.com/media/3oEjHGrVGrqgFFknfO/giphy.gif" alt="Cœur animé 3">
         <img src="https://media.giphy.com/media/1wXnkj4GsJq7Pf7UM1/giphy.gif" alt="Cœur animé 4">
     </div>
+    <button onclick="launchConfetti()">Clique si tu m'aimes aussi</button>
+    <canvas id="confettiCanvas" class="confetti"></canvas>
+
+    <script>
+        function launchConfetti() {
+            const confetti = document.getElementById('confettiCanvas');
+            const confettiCtx = confetti.getContext('2d');
+            confetti.width = window.innerWidth;
+            confetti.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#ff0', '#f00', '#0f0', '#00f', '#f0f', '#0ff'];
+
+            function createParticle() {
+                return {
+                    x: Math.random() * confetti.width,
+                    y: Math.random() * confetti.height - confetti.height,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    size: Math.random() * 10 + 5,
+                    speed: Math.random() * 2 + 1,
+                    opacity: Math.random() * 0.8 + 0.2
+                };
+            }
+
+            for (let i = 0; i < 200; i++) {
+                particles.push(createParticle());
+            }
+
+            function drawParticles() {
+                confettiCtx.clearRect(0, 0, confetti.width, confetti.height);
+                particles.forEach(p => {
+                    confettiCtx.fillStyle = `${p.color}`;
+                    confettiCtx.globalAlpha = p.opacity;
+                    confettiCtx.beginPath();
+                    confettiCtx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+                    confettiCtx.fill();
+                    p.y += p.speed;
+                    if (p.y > confetti.height) p.y = -p.size;
+                });
+                requestAnimationFrame(drawParticles);
+            }
+
+            drawParticles();
+        }
+    </script>
 </body>
 </html>
+
 
 
