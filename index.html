@@ -90,10 +90,22 @@
     </style>
 </head>
 <body>
-    <audio controls autoplay>
+    <audio controls autoplay id="music">
         <source src="music.mp3" type="audio/mpeg">
         Votre navigateur ne supporte pas l'audio HTML5.
     </audio>
+    <script>
+function PlayMusic() {
+
+  var play=document.getElementById("music");
+  play.play();
+}
+
+$(document).ready(function(){
+  setTimeout(PlayMusic,3000);
+})
+
+</script>
     <h1>💖 Je t'aime Noémie 💖</h1>
     <div class="hearts">💞💓💘💕💗💝</div>
     <div class="gif-container">
